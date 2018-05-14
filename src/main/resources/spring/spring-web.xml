@@ -32,4 +32,17 @@
 
     <!-- 4.扫描web相关的bean -->
     <context:component-scan base-package="top.lys.web" />
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <!-- 多个拦截器，顺序执行 -->
+        <!-- 配置登陆拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="top.lys.filter.LoginHandlerIntercepter"></bean>
+        </mvc:interceptor>
+        <!--
+        .....
+
+         -->
+    </mvc:interceptors>
 </beans>
